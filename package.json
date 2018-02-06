@@ -1,0 +1,19 @@
+{
+  "name": "js_final",
+  "version": "1.0.0",
+  "description": "final project for front end pro",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ColeMaddison/js_final.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ColeMaddison/js_final/issues"
+  },
+  "homepage": "https://github.com/ColeMaddison/js_final#readme"
+}
