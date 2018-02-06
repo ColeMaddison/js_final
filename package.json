@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ColeMaddison/js_final/issues"
   },
-  "homepage": "https://github.com/ColeMaddison/js_final#readme"
+  "homepage": "https://github.com/ColeMaddison/js_final#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
