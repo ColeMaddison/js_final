@@ -5,6 +5,7 @@
 		<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 		<!-- <script src="js/slider.js"></script> -->
 		<!-- Custom Theme files -->
 		<!--theme-style-->
@@ -22,7 +23,7 @@
 		<script type="text/javascript" src="js/memenu.js"></script>
 		<script>$(document).ready(function(){$(".memenu").memenu();});</script>
 		<script src="js/simpleCart.min.js"> </script>	
-		</head>
+	</head>
 <body>
 <!--header-->
 <div class="header">
@@ -37,7 +38,44 @@
 			<div class="header-left">		
 					<ul>
 						<li ><a href="login.html"  >Login</a></li>
-						<li><a  href="register.html"  >Register</a></li>
+						<li> <button type="button" class="lock custom" data-toggle="modal" data-target="#regModal" >Register</button></li>
+
+						<div id="regModal" class="modal fade " role="dialog">
+							<div class="modal-dialog ">
+								<div class="modal-content custom">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4 class="modal-title">Register</h4>
+									</div>
+									<div class="modal-body">
+										<form>
+											<div>
+												<span>First name</span>
+												<input type="text">
+											</div>
+											<div>
+												<span>Last Name</span>
+												<input type="text">
+											</div>
+											<div>
+												<span>Email Address</span>
+												<input type="text">
+												<a href="#" class="news">
+													<label class="checkbox">
+														<input type="checkbox" name="checkbox" checked=""><i></i>Accept newsletter
+													</label>
+												</a>
+											</div>
+											<input type="submit" value="Register">
+											
+										</form>
+									</div>
+									<!-- <div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+									</div> -->
+								</div>
+							</div>
+						</div>
 
 					</ul>
 					<div class="cart box_1">
