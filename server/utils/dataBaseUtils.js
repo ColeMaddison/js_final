@@ -31,6 +31,7 @@ function createProduct(data) {
         tags: data.tags,
         fullDescription: data.fullDescription,
         addditionalInfo: data.addditionalInfo,
+        link: data.link,
         reviews: null
     });
     return product.save(); 
