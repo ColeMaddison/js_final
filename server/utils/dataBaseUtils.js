@@ -26,11 +26,12 @@ function createProduct(data) {
         description: data.description,
         category: data.category,
         price: data.price,
-        color: data.price,
+        color: data.color,
         size: data.size,
         tags: data.tags,
         fullDescription: data.fullDescription,
-        addditionalInfo: data.addditionalInfo
+        addditionalInfo: data.addditionalInfo,
+        reviews: null
     });
     return product.save(); 
 }
