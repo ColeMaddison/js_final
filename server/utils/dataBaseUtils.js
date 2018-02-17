@@ -10,37 +10,44 @@ require('../models/Product');
 const Product = mongoose.model('Product');
 
 // connect to db
-export function setUpConnection(){
+function setUpConnection(){
     mongoose.connect(`mongodb://localhost/hillel_final`);
 }
 
 // get all products
-export function listProducts() { 
+function listProducts() { 
     return Product.find();
 }
 
 // create and add products to db, creating instance of class Procuct
-export function createProduct(data) { 
+function createProduct(data) { 
     const product = new Product({
         title: data.title,
         description: data.description,
         category: data.category,
         price: data.price,
-        color: data.price,
+        color: data.color,
         size: data.size,
         tags: data.tags,
         fullDescription: data.fullDescription,
-        addditionalInfo: data.addditionalInfo
+        addditionalInfo: data.addditionalInfo,
+        reviews: null
     });
     return product.save(); 
 }
 
 // add review
-export function addReview(data) { 
+function addReview(data) { 
     ///////////////////////////////////////////////////
 }
 
 // remove product
-export function deleteProduct(id){
+function deleteProduct(id){
     return Product.findById(id).remove();
 } 
+
+module.exports.setUpConnection = setUpConnection;
+module.exports.listProducts = listProducts;
+module.exports.createProduct = createProduct;
+module.exports.addReview = addReview;
+module.exports.deleteProduct = deleteProduct;
