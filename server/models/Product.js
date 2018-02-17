@@ -17,6 +17,7 @@ const ProductSchema = new Schema({
     tags: [{ type: String }],
     fullDescription: { type: String },
     additionalInfo: { type: String },
+    link: { type: String },
     reviews: [{
         name: { type: String },
         text: { type: String },

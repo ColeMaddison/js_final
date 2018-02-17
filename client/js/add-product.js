@@ -13,6 +13,7 @@ $(document).ready(() => {
         let tags = $('input[name="tags"]').val();
         let fullDescription = $('input[name="fullDescription"]').val();
         let additionalInfo = $('input[name="additionalInfo"]').val();
+        let link = $('input[name="link"]').val();
         
         console.log(title, description, category, price, colors, sizes, tags, fullDescription, additionalInfo);
 
@@ -25,7 +26,8 @@ $(document).ready(() => {
             sizes: sizes,
             tags: tags,
             fullDescription: fullDescription,
-            additionalInfo: additionalInfo
+            additionalInfo: additionalInfo,
+            link: link
         };
 
         $.ajax({
