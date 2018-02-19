@@ -35,9 +35,9 @@ app.get('/add-product', (req, res) => {
 
 // add product in database
 app.post('/add-product', (req, res) => {
-    // db.createProduct(req.body).then(data => res.send(data));
-    res.send(req.body);
-    console.log(req.body);
+    db.createProduct(req.body).then(data => res.send(data));
+    // res.send(req.body);
+    // console.log(data);
 });
 
 const server = app.listen(8008, () => {
