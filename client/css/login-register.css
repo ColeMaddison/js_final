@@ -1,0 +1,15 @@
+/* login and register buttons */
+
+.register-button, 
+.login-button{
+	border: none;
+	font-size: 1.2em;
+	color: #fff;
+	background: #2D2D2D;
+    box-sizing: border-box;
+    height: 100%;
+} 
+
+.register-button:hover {
+    background-color: #353535;
+}

@@ -8,12 +8,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ProductSchema = new Schema({
+    id: { type: Number },
     title: { type: String },
     description : { type: String },
     category: { type: String },
     price: { Number },
-    color: [{ type: String }],
-    size: [{ type: String }],
+    colors: [{ type: String }],
+    sizes: [{ type: String }],
     tags: [{ type: String }],
     fullDescription: { type: String },
     additionalInfo: { type: String },

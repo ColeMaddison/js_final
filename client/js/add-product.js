@@ -4,6 +4,7 @@ $(document).ready(() => {
     const productForm = $('.addProduct');
     productForm.submit((event) => {
         event.preventDefault(); // always include that, because bootstrap submit is by default a GET method 
+        let id = $('input[name="id"]').val();
         let title = $('input[name="title"]').val();
         let description = $('input[name="description"]').val();
         let category = $('input[name="category"]').val();
@@ -18,6 +19,7 @@ $(document).ready(() => {
         console.log(title, description, category, price, colors, sizes, tags, fullDescription, additionalInfo);
 
         let data = {
+            id: id,
             title: title,
             description: description,
             category: category,

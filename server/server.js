@@ -12,6 +12,9 @@ db.setUpConnection();
 
 const app = express();
 
+// template engine
+app.set('view engine', 'ejs');
+
 app.use(express.static(path.join(__dirname, '../client')));
 
 // on every req - transform data to json - then to route
@@ -22,6 +25,12 @@ app.use(express.urlencoded());
 
 app.get('/', (req, res) => {
     res.sendFile('index.html');
+});
+
+app.get('/single/:id', (req, res) => {
+    let obj = db.checkOne(req.params.id);
+    console.log(obj);
+    res.render('single', { obj: obj });
 });
 
 // list all products
@@ -35,9 +44,7 @@ app.get('/add-product', (req, res) => {
 
 // add product in database
 app.post('/add-product', (req, res) => {
-    // db.createProduct(req.body).then(data => res.send(data));
-    res.send(req.body);
-    console.log(req.body);
+    db.createProduct(req.body).then(data => res.send(data));
 });
 
 const server = app.listen(8008, () => {
