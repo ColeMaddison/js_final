@@ -201,7 +201,8 @@ a.item_add {
   margin: 0;
   }
 .rslides li {
-  -webkit-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 	width: 100%;
 	display: block;
   left: 0;
@@ -359,7 +360,7 @@ height: 35px;
 .content-bottom ul li{
 	display:inline-block;
 	border:1px solid #eee;
-	float:left;
+	/* float:left; */
   border-left: none;
   width: 16.666%;
 }
@@ -801,7 +802,7 @@ p.m_11 {
 /*--product--*/
 .tags ul li {
 	display: inline-block;
-	float:left;
+	/* float:left; */
 	    width: 22.8%;
   margin: 0.5em 2% 0 0;
   text-align: center;

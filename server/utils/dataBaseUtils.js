@@ -19,6 +19,10 @@ function listProducts() {
     return Product.find();
 }
 
+function checkOne(id) {
+    return Product.find().limit(1);
+}
+
 // create and add products to db, creating instance of class Procuct
 function createProduct(data) { 
     const product = new Product({
@@ -26,8 +30,8 @@ function createProduct(data) {
         description: data.description,
         category: data.category,
         price: data.price,
-        color: data.color,
-        size: data.size,
+        colors: data.colors,
+        sizes: data.sizes,
         tags: data.tags,
         fullDescription: data.fullDescription,
         addditionalInfo: data.addditionalInfo,
@@ -52,3 +56,4 @@ module.exports.listProducts = listProducts;
 module.exports.createProduct = createProduct;
 module.exports.addReview = addReview;
 module.exports.deleteProduct = deleteProduct;
+module.exports.checkOne = checkOne;
