@@ -3,6 +3,7 @@
 const express = require('express');
 const path = require('path'); // to specify the static folder
 const bodyParser = require('body-parser');
+const Product = require('./models/Product');
 
 // import the database module
 const db = require('./utils/dataBaseUtils');
@@ -27,10 +28,11 @@ app.get('/', (req, res) => {
     res.sendFile('index.html');
 });
 
-app.get('/single/:id', (req, res) => {
-    let obj = db.checkOne(req.params.id);
-    console.log(obj);
-    res.render('single', { obj: obj });
+app.get('/single/:id', (req,res) => {
+    console.log(typeof req.params.id);
+    db.listProducts().then(data => {
+        res.render('single', {data: data[Number(req.params.id)]})
+    });
 });
 
 // list all products

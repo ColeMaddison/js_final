@@ -1,13 +1,10 @@
 'use strict';
 
 // handling the requests to the database
-
 // coonect mongoose and product model
 const mongoose = require('mongoose');
 require('../models/Product');
-
-// set pointer to product model in var
-const Product = mongoose.model('Product');
+const Product = mongoose.model('Product'); // set pointer to product model in var
 
 // connect to db
 function setUpConnection(){
@@ -20,7 +17,7 @@ function listProducts() {
 }
 
 function checkOne(id) {
-    return Product.find().limit(1);
+    return Product.findOne({_id: id});
 }
 
 // create and add products to db, creating instance of class Procuct
@@ -57,3 +54,4 @@ module.exports.createProduct = createProduct;
 module.exports.addReview = addReview;
 module.exports.deleteProduct = deleteProduct;
 module.exports.checkOne = checkOne;
+module.exports.Product = Product;
