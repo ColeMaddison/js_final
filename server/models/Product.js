@@ -1,7 +1,6 @@
 'use strict';
 
 // the model for the product
-
 // importing mongoose package
 const mongoose = require('mongoose');
 
