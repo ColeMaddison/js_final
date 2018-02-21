@@ -29,9 +29,23 @@ app.get('/', (req, res) => {
 });
 
 app.get('/single/:id', (req,res) => {
-    console.log(typeof req.params.id);
     db.listProducts().then(data => {
-        res.render('single', {data: data[Number(req.params.id)]})
+        let selectedData = data[Number(req.params.id)];
+        // console.log(selectedData.colors.length, typeof selectedData.colors);
+        
+        let extendedData = {
+            colors: selectedData.colors[0].split(','),
+            sizes: selectedData.sizes[0].split(','),
+            tags: selectedData.tags[0].split(','),
+            reviews: selectedData.reviews,
+            title: selectedData.title,
+            description: selectedData.description,
+            category: selectedData.category,
+            fullDescription: selectedData.fullDescription,
+            link: selectedData.link.trim().split(',')
+        };
+        console.log(extendedData);
+        res.render('single', {data: extendedData})
     });
 });
 

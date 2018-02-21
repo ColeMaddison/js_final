@@ -11,7 +11,7 @@ const ProductSchema = new Schema({
     title: { type: String },
     description : { type: String },
     category: { type: String },
-    price: { Number },
+    price: { type: Number },
     colors: [{ type: String }],
     sizes: [{ type: String }],
     tags: [{ type: String }],
