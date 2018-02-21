@@ -343,17 +343,17 @@ amet consectetuer </a></h6>
 				<div class="col-md-5 single-top">	
 			<div class="flexslider">
   <ul class="slides">
-    <li data-thumb="../images/si.jpg">
-      <img src="../images/si.jpg" />
+    <li data-thumb="../<%= data.link[0] %>">
+      <img src="../<%= data.link[0] %>" />
+	</li1>
+    <li data-thumb="../<%= data.link[1] %>">
+      <img src="../<%= data.link[1] %>" />
     </li>
-    <li data-thumb="../images/si1.jpg">
-      <img src="../images/si1.jpg" />
+    <li data-thumb="../<% data.link[2].trim() %>">
+      <img src="../<% data.link[2].trim() %>" />
     </li>
-    <li data-thumb="../images/si2.jpg">
-      <img src="../images/si2.jpg" />
-    </li>
-    <li data-thumb="../images/si.jpg">
-      <img src="../images/si.jpg" />
+    <li data-thumb="../<%= data.link[0] %>">
+      <img src="../<%= data.link[0] %>" />
     </li>
   </ul>
 </div>
@@ -373,7 +373,7 @@ $(window).ready(function() {
 					</div>	
 					<div class="col-md-7 single-top-in simpleCart_shelfItem">
 						<div class="single-para ">
-						<h4>Lorem Ipsum</h4>
+						<h4><%= data.title %></h4>
 							<div class="star-on">
 								<ul class="star-footer">
 										<li><a href="#"><i> </i></a></li>
@@ -389,32 +389,40 @@ $(window).ready(function() {
 							<div class="clearfix"> </div>
 							</div>
 							
-							<h5 class="item_price">$ 95.00</h5>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed 
-diam nonummy nibh euismod tincidunt ut laoreet dolore 
-magna aliquam erat </p>
+							<h5 class="item_price">$ 95.00</h5> <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+							<p><%= data.description %></p>
 							<div class="available">
 								<ul>
 									<li>Color
 										<select>
-										<option>Silver</option>
+										<% for(var i=0; i<data.colors.length; i++){ %>
+											<option><%= data.colors[i] %></option>
+										<%}%>
+										<!-- <option>Silver</option>
 										<option>Black</option>
 										<option>Dark Black</option>
-										<option>Red</option>
+										<option>Red</option> -->
 									</select></li>
 								<li class="size-in">Size<select>
-									<option>Large</option>
+									<% for(var i=0; i<data.sizes.length; i++){ %>
+										<option><%= data.sizes[i] %></option>
+									<%}%>
+									<!-- <option>Large</option>
 									<option>Medium</option>
 									<option>small</option>
 									<option>Large</option>
-									<option>small</option>
+									<option>small</option> -->
 								</select></li>
 								<div class="clearfix"> </div>
 							</ul>
 						</div>
 							<ul class="tag-men">
 								<li><span>TAG</span>
-								<span class="women1">: Women,</span></li>
+								<span class="women1">: 
+									<% for(var i=0; i<data.tags.length; i++){ %>
+										<%= data.tags[i] %> <!-- !!!!!!!!!!!!!!!!!!! -->
+									<%}%>
+								</span></li>
 								<li><span>SKU</span>
 								<span class="women1">: CK09</span></li>
 							</ul>
@@ -436,7 +444,7 @@ magna aliquam erat </p>
 	<ul class="cd-tabs-content">
 		<li data-content="fashion" >
 		<div class="facts">
-									  <p > There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p>
+									  <p > <%= data.fullDescription %> </p>
 										<ul>
 											<li>Research</li>
 											<li>Design and Development</li>
@@ -452,12 +460,26 @@ magna aliquam erat </p>
 		<div class="facts1">
 					
 						<div class="color"><p>Color</p>
-							<span >Blue, Black, Red</span>
+							<span >
+								<% for(var i=0; i<data.colors.length; i++){ %>
+									<%= data.colors[i] %>
+									<% if(i!==data.colors.length-1){ %>
+										<%= ", " %>
+									<% } %>
+								<%}%>
+							</span>
 							<div class="clearfix"></div>
 						</div>
 						<div class="color">
 							<p>Size</p>
-							<span >S, M, L, XL</span>
+							<span >
+								<% for(var i=0; i<data.sizes.length; i++){ %>
+									<%= data.sizes[i] %>
+									<% if(i!==data.sizes.length-1){ %>
+										<%=","%>
+									<% } %>
+								<%}%>
+							</span>
 							<div class="clearfix"></div>
 						</div>
 					        
